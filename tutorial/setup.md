@@ -7,49 +7,50 @@ This is the setup section for realistic tutorial.
 All resource files needed in this tutorial are provided in `ml-poc-version/resources`.
 The structure of the project will be created along the tutorial.
 
-If it is not already done, clone the repository on the tutorial branch.
+If it is not already done, clone the repository.
 
-    git clone -b tutorial https://github.com/peopledoc/mlv-tools-tutorial
-    cd ml-poc-version
+    git clone https://github.com/peopledoc/mlv-tools-tutorial
 
-Create your working branch
+Create your own branch
 
-    git checkout -b working
+    git checkout -b experiment
     
 
-Create the project base structure.
+Create the project structure.
 
     make init-struct
 
-Following structure must be created:
+    > The following structure must be created
 
     ├── poc
-    │   ├── pipeline
-    │   │   ├── __init__.py
-    │   │   ├── notebooks        # contains Jupyter notebooks (one by pipeline step)
-    |   |   └── steps            # contains generated configurable Python 3 scripts
-    |   ├── data                 # contains pipeline data
-    │   └── commands
-    │       └── dvc              # contains dvc command wrapped in a bash script
-    ...
-    ├── resources                # contains Jupyter notebooks needed in this tutorial
-    │   ├── 01_Extract_dataset.ipynb
-    │   ├── 02_Tokenize_text.ipynb
-    │   ├── 03_bis_Classify_text.ipynb
-    │   ├── 03_Classify_text.ipynb
-    │   └── 04_Evaluate_model.ipynb
-    ...
+    │ ├── commands
+    │ │  └─── dvc           # contains dvc command wrapped in a bash script
+    │ ├── data              # contains pipeline data
+    │ └── pipeline
+    │   ├── notebooks       # contains Jupyter notebooks (one by pipeline step)
+    │   └─── steps          # contains generated configurable Python 3 scripts
+
 
 > It is not mandatory to follow this structure, it is just an example for this tutorial.
+
+The tutorial resources are stored in `./resources`
+
+    ├── resources                         # contains Jupyter notebooks needed in this tutorial
+    │   ├── 01_Extract_dataset.ipynb
+    │   ├── 02_Tokenize_text.ipynb
+    │   ├── 03_bis_Classify_text.ipynb
+    │   ├── 03_Classify_text.ipynb
+    │   ├── 04_Evaluate_model.ipynb
+    │   └── [...]
 
 ## 2. Prepare Environment
 
 Create a virtual environment using **conda** or **virtualenv**, then activate it.
-Then setup the project.
+Install the project dependencies.
 
     make develop
 
-## 3. Initialize DVC Project
+## 3. Initialize the DVC Project
 **DVC** works on top of **git** repositories. Run **DVC** initialization in a **git**
  repository directory to create **DVC meta files**.
 
@@ -76,7 +77,7 @@ The configuration file `./.mlvtools` should be created.
 
 Add it under git versioning:
 
-    git add .mlvtools && git commit -m 'Tutorial setup: dvc init'
+    git add .mlvtools && git commit -m 'Tutorial setup: mlvtools setup'
 
 ## 5. Add Git Hooks and Filters
 
@@ -105,6 +106,6 @@ Run the following command to download them.
 Data are stored in `./poc/data/20news-bydate_py3.pkz`.
 
 
-You reached the end of the setup part, see [Use Case 1: Build and Reproduce a Pipeline](./use_case1.md)
+You have reached the end of the setup part, see [Use Case 1: Build and Reproduce a Pipeline](./use_case1.md)
 
 Or [go back to README](../README.md)

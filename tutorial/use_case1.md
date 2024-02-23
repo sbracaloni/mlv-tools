@@ -12,10 +12,8 @@ The aim of this use case is to show how to build a pipeline and how to reproduce
 
 
 ## 1. Split Dataset
-
-This pipeline step is based on the `01_Extract_dataset.ipynb` **Jupyter notebook**. It loads
- data downloaded in setup and splits them into a train or a test data set.
-
+The first step of this pipeline is done in `01_Extract_dataset.ipynb` **Jupyter notebook**. It loads
+ the input data (downloaded during the setup steps) and it splits it into 2 datasets: one to train and one to test the model.
 |||
 | :--- | :--- |
 | **Step Input**: | `./poc/data/20news-bydate_py3.pkz` |
@@ -38,7 +36,7 @@ This pipeline step is based on the `01_Extract_dataset.ipynb` **Jupyter notebook
 
 4. Commit it.
 
-       git add ./poc/pipeline/notebooks/01_Extract_dataset.ipynb **/*.dvc
+       git add ./poc/pipeline/notebooks/01_Extract_dataset.ipynb **/*.dvc ./poc/**/.gitignore
 
        git commit -m 'Tutorial: use case 1 step 1 - Add notebook'
 

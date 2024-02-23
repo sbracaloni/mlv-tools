@@ -33,7 +33,7 @@ dummy-struct:
 
 download-data:
 	echo "Download tutorial input data"
-	./download_data.py
+	curl -L https://github.com/Azure-Samples/Machine-Learning-Operationalization/raw/master/samples/python/code/newsgroup/data/20news-bydate_py3.pkz -o ./poc/data/20news-bydate_py3.pkz
 
 change-input-data:
 	echo "Change tutorial input data"
